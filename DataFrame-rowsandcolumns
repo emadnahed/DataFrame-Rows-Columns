@@ -1,0 +1,40 @@
+#Pandas Library for DataFrames
+import pandas as pd
+
+#DataSet as Dictionary
+doct = {
+   "Name": ['Azra', 'Kamini', 'Goyal', 'Zabee', 'Roy', 'Udupi', 'Sameer', 'Torah', 'Cadilla', 'Ritz'],
+   "Tax": [1250, 3200, 1200, 1800, 4200, 3200, 2300, 2310, 1200, 3200],
+   "Salary": [12500, 32000, 12000, 18000, 42000, 32000, 23000, 23100, 12000, 32000] 
+   
+ #DataFrame object created through dataset
+ df = pd.DataFrame(doct)
+
+
+
+
+ #Accessing row(s) from single column.
+ x = df['Salary'][0:-1]
+ 
+ 
+ #Alternative way(view mode) for Accessing row(s) from single column.:
+ print(df['Tax'][0:])
+ 
+ 
+ #Alternative way(view mode) for Accessing row(s) from single column :
+ print(df[['Tax','Salary', 'Name']][0:])
+ 
+ 
+ #Alternative way(copy mode) for Accessing row(s) from single column [Through iLOC mode]:
+ x = df.iloc[[0], [0,1,2]]
+ x = df.iloc[0:-1, 0:3]
+ 
+ #Alternative way(view mode) for Accessing row(s) from single column:
+ print(df['Tax'].loc[0])
+ 
+ 
+ #Alternative way(view mode) for Accessing row(s) from single column [Through LOC mode]:
+ print(df['Tax'])
+ 
+ #Locating a row(first or optional) of entire DataFrame
+ print(df.iloc[0])
